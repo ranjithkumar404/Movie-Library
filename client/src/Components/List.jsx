@@ -62,9 +62,15 @@ useEffect(() => {
       const home=()=>{
         naviagte('/',{state:{username}})
       }
-      const dlt=async()=>{
-           alert("Are you sure you want to delete this movie from your list")
-      }
+      const deleteMovie = async (id) => {
+        try {
+          await axios.delete(`http://localhost:3001/list/${username}/${id}`);
+          toast.success("Movie deleted successfully");
+          setList(list.filter(movie => movie._id !== id));
+        } catch (error) {
+          console.error("Error deleting movie:", error);
+        }
+      };
   return (
     <div className='flex flex-col space-y-9 items-center p-3 justify-center'>
       <h1 className='text-2xl' >Add your Favourite movie to your list</h1>
@@ -83,7 +89,7 @@ useEffect(() => {
       <h1><span className='font-bold'>Genre</span>:{mname.Genre}</h1>
       <h1><span className='font-bold'>Realsed On</span>:{mname.Released}</h1>
       <h1><span className='font-bold'>Run time</span>:{mname.Runtime}</h1>
-            <button><MdDelete /></button>
+            <button ><MdDelete /></button>
              </div>
               <div>
                 <img className='rounded-md w-[200px] h-[200px]'  src={mname.Poster} alt="" />
@@ -108,7 +114,7 @@ useEffect(() => {
           <p><span className='font-bold'>Genre:</span> {movie.genre ? movie.genre.join(', ') : 'N/A'}</p>
           <p><span className='font-bold'>Released On:</span> {movie.releaseDate ? new Date(movie.releaseDate).toDateString() : 'N/A'}</p>
           <p><span className='font-bold'>Run time:</span> {movie.runtime ? `${movie.runtime} mins` : 'N/A'}</p>
-          <button onClick={dlt} className='text-red-600 text-2xl'><MdDelete /></button>
+          <button onClick={() => deleteMovie(movie._id)}  className='text-red-600 text-2xl'><MdDelete /></button>
          </div>
          
         </div>

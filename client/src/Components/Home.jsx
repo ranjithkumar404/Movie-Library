@@ -20,6 +20,7 @@ const Home = () => {
   const search=async(e)=>{
     e.preventDefault();
 try {
+  if(!name) return toast.error("Please Enter a movie!")
   setLoading(true);
   const response=await axios.get(`http://www.omdbapi.com/?t=${name}&apikey=219db2ef`)
 console.log(response.data.Response);
@@ -50,6 +51,7 @@ setMname(response.data);
   useEffect(() => {
     const fetchList = async () => {
       try {
+        if(!username) return setList([])
         const res = await axios.get(`http://localhost:3001/list/${username}`);
         console.log(res.data);
         setList(res.data);
@@ -66,7 +68,7 @@ setMname(response.data);
   return (
     <div className='scroll-n'>
      <div className='p-3 flex flex-col justify-center  items-center'>
-     {list.length >0 ? (
+     {username && list.length >0 ? (
           <div className='flex space-y-5 flex-col items-center'>
             <h1 className='text-3xl  font-semibold text-green-400 text-center'>{username}'s Movie List</h1>
             

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+    /* background: radial-gradient(circle at 10.6% 22.1%, rgb(206, 18, 18) 0%, rgb(122, 21, 21) 100.7%);
+    color: white; */
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  

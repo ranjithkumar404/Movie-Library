@@ -33,7 +33,20 @@ const getlist=async(req,res,next)=>{
     }
 }
 
+const deletemovie=async(req,res,next)=>{
+    try {
+        const userdetail=await  user.findOne({username:req.params.username})
+        const {id}=req.params
+        userdetail.movies=userdetail.movies.filter((movie)=>movie._id.toString() !== id)
+        await userdetail.save()
+        return res.status(200).json("Movie deleted Successfully!!")
+    }
+    catch(error){
+        next(error)
+    }
+}
 
 
 
-module.exports={createlist,getlist}
+
+module.exports={createlist,getlist,deletemovie}

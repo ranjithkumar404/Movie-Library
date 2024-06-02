@@ -16,7 +16,7 @@ const Nav = () => {
   return (
     <div className='flex justify-between backdrop-blur-sm items-center p-4 '>
       <div>
-<Link className='text-red-500 flex space-x-2  items-center text-2xl' to="/" >
+<Link className='text-green-500  flex space-x-2  items-center font-bold text-4xl' to="/" >
   <h1 >Movie-Link </h1> 
 <RiMovie2Line  size={30}/>
 </Link>
@@ -25,8 +25,8 @@ const Nav = () => {
 <div>
   {
     n? (<div className='flex  items-center'><h1 className='text-black px-3 text-[20px] '>{n}</h1>
-    <Link to='/' onClick={handlelog} className='bg-[#21C55C] font-semibold hover:bg-white hover:text-green-500  text-xl  rounded-md text-white px-3 py-1' type="button">Logout</Link></div>):(
-      <Link to="/signin"  className='bg-[#21C55C] font-semibold hover:bg-white hover:text-green-500  text-xl  rounded-md text-white px-3 py-1' type="button">Sign Up</Link>
+    <Link to='/' onClick={handlelog} className='bg-green-500  font-semibold  hover:shadow-lg  text-2xl  rounded-md text-white px-3 py-1' type="button">Logout</Link></div>):(
+      <Link to="/signin"  className='bg-green-500  font-semibold  hover:shadow-lg  text-2xl  rounded-md text-white px-3 py-1' type="button">Sign Up</Link>
     )
   }
 

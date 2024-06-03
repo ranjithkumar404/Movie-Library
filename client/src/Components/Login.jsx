@@ -21,9 +21,13 @@ const Login = () => {
        } 
     } catch (error) {
      console.log(error);
-      if(error.status === 404 || error.status === 400 ){
+      if(error.status === 404  ){
        alert("User not found!!");
       navigate('/signin')
+      }
+      else if(error.response.status === 400){
+        alert("Wrong password!!")
+        
       }
       // console.log(error);
     }

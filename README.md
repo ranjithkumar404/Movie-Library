@@ -20,3 +20,7 @@ This project is a full-stack application that allows users to create and share m
 
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
+
+Replace https://github.com/your-username/your-repo-name.git with the actual URL of your repository.
+
+##Navigate to the project directory:

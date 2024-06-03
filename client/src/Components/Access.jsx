@@ -11,7 +11,7 @@ const Access = () => {
             console.log("we are sending the request to get ur frnd's movie list movie list");
             console.log("the id entered is",id);
             if(!id) return toast.error("Please enter the ID to access the movie list")
-            const res=await axios.get(`http://localhost:3001/list/share/${id}`)
+            const res=await axios.get(`https://movie-library-jwwr.onrender.com/list/share/${id}`)
             console.log("we got the response for the list");
             
             console.log(res.data);

@@ -52,7 +52,7 @@ setMname(response.data);
     const fetchList = async () => {
       try {
         if(!username) return setList([])
-        const res = await axios.get(`http://localhost:3001/list/${username}`);
+        const res = await axios.get(`https://movie-library-jwwr.onrender.com/list/${username}`);
         console.log(res.data);
         setList(res.data);
       } catch (error) {

@@ -21,7 +21,7 @@ useEffect(() => {
   const fetchList = async () => {
     try {
       console.log(ispub);
-      const res = await axios.get(`http://localhost:3001/list/${username}`);
+      const res = await axios.get(`https://movie-library-jwwr.onrender.com/list/${username}`);
       console.log(res.data);
       setList(res.data);
     } catch (error) {
@@ -50,7 +50,7 @@ useEffect(() => {
     const {  Title, Actors, Released, Runtime, Genre ,Poster} = response.data;
   
     console.log("is pub?",ispub);
-    const res=await axios.post('http://localhost:3001/list',{username,Title, Actors, Released, Runtime, Genre,Poster})
+    const res=await axios.post('https://movie-library-jwwr.onrender.com/list',{username,Title, Actors, Released, Runtime, Genre,Poster})
      console.log("response after pushing into DB",res);
     toast.success("Movie added to your list");
    
@@ -72,7 +72,7 @@ useEffect(() => {
       }
       const deleteMovie = async (id) => {
         try {
-          await axios.delete(`http://localhost:3001/list/${username}/${id}`);
+          await axios.delete(`https://movie-library-jwwr.onrender.com/list/${username}/${id}`);
           toast.success("Movie deleted successfully");
           setList(list.filter(movie => movie._id !== id));
         } catch (error) {
@@ -83,7 +83,7 @@ useEffect(() => {
 
 try {
   console.log("we are sending request to get id");
-  const res=await axios.post("http://localhost:3001/list/share",{username,ispub});
+  const res=await axios.post("https://movie-library-jwwr.onrender.com/list/share",{username,ispub});
   console.log("got the res from  get id");
   console.log(res.data);
   setId(res.data.shareableLink)

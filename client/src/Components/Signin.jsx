@@ -11,7 +11,7 @@ const Signin = () => {
       e.preventDefault();
       
     try {
-      const res= await axios.post('http://localhost:3001/user',{username,password})
+      const res= await axios.post('https://movie-library-jwwr.onrender.com/user',{username,password})
       console.log(res.status);
        toast.success("User created successfully")
      

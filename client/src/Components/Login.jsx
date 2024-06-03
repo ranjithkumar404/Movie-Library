@@ -11,7 +11,7 @@ const Login = () => {
       e.preventDefault();
       
     try {
-      const res= await axios.post('http://localhost:3001/user/login',{username,password})
+      const res= await axios.post('https://movie-library-jwwr.onrender.com/user/login',{username,password})
       console.log(res.status);
       if(res.status ===404) alert("User not found");
        else{

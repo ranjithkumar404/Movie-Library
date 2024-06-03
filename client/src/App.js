@@ -5,6 +5,7 @@ import Signin from './Components/Signin';
 import Login from './Components/Login';
 import Nav from './Components/Nav';
 import List from './Components/List';
+import Access from './Components/Access';
 import './index.css';
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/signin' element={<Signin/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/movielist' element={<List/>}/>
+          <Route path='/access' element={<Access/>}/>
         </Routes>
       </Router>
     </div>

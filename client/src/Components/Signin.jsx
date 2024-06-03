@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 const Signin = () => {
     const [password,setPassword]=useState('')
     const [username,setName]=useState('')
@@ -12,7 +13,7 @@ const Signin = () => {
     try {
       const res= await axios.post('http://localhost:3001/user',{username,password})
       console.log(res.status);
-      //if(res.status ===404) alert("User not found");
+       toast.success("User created successfully")
      
         localStorage.setItem('username',username);
         navigate('/',{state:{username}})

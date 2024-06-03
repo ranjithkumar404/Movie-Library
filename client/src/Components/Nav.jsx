@@ -34,7 +34,7 @@ const navigate=useNavigate()
       </div>
 <div>
   {
-    n? (<div className='flex  items-center'><h1 className='text-black px-3 text-[20px] '>my name:{n}</h1>
+    n? (<div className='flex  items-center'><h1 className='text-black px-3 text-[20px] '>{n}</h1>
     <Link to='/' onClick={handlelog} className='bg-green-500  font-semibold  hover:shadow-lg  text-2xl  rounded-md text-white px-3 py-1' type="button">Logout</Link></div>):(
       <Link to="/signin"  className='bg-green-500  font-semibold  hover:shadow-lg  text-2xl  rounded-md text-white px-3 py-1' type="button">Sign Up</Link>
     )

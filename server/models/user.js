@@ -38,7 +38,13 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    movies: [MovieSchema], // Array of MovieSchema
+    movies: [MovieSchema],
+    shareableLink: {
+    type:String
+    },
+    isPublic:{
+      type:Boolean
+    }
   },
   { timestamps: true } // To show the time at which created and updated
 );

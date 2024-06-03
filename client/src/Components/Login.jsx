@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 const Login = () => {
     const [password,setPassword]=useState('')
     const [username,setName]=useState('')
@@ -14,6 +15,7 @@ const Login = () => {
       console.log(res.status);
       if(res.status ===404) alert("User not found");
        else{
+        toast.success("User logged in successfully")
         localStorage.setItem('username',username);
         navigate('/',{state:{username}})
        } 

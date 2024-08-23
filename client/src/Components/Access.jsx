@@ -3,9 +3,11 @@ import { useNavigate,Link } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaHome } from "react-icons/fa";
 const Access = () => {
     const [id,setId]=useState('')
     const [movies,setMovies]=useState([])
+    
     const getmovie=async()=>{
         try {
             console.log("we are sending the request to get ur frnd's movie list movie list");
@@ -26,6 +28,7 @@ const Access = () => {
         }
     
     }
+   
   return (
     <div className='flex flex-col p-5 justify-center items-center gap-3'>
  <div>
@@ -64,6 +67,7 @@ const Access = () => {
                     )
                 }
             </div>
+            
     </div>
   )
 }
